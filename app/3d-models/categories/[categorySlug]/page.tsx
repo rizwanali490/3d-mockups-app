@@ -20,13 +20,14 @@ export default async function CategoryPage({params, searchParams}:{
     notFound()
   }
 
-  const models = await getModels({sort, search, categorySlug, page, modelsPerPage:MODELS_PER_PAGE})
   const modelCount = await getModelsCount({search, categorySlug})
   const totalPages = Math.max(1, Math.ceil(modelCount/MODELS_PER_PAGE))
 
   if(page < 1 || page > totalPages || sort === null){
     redirect(`/3d-models/categories/${categorySlug}`)
   }
+
+  const models = await getModels({sort, search, categorySlug, page, modelsPerPage:MODELS_PER_PAGE})
   return (
     <ModelsBrowser 
       search={search} 

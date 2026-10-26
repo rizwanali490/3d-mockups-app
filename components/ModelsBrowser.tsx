@@ -10,8 +10,8 @@ export default function ModelsBrowser({search, models, categoryName, totalPages,
   search?:string,
   models:Model[],
   categoryName?:string,
-  totalPages?: number,
-  currentPage?: number
+  totalPages: number,
+  currentPage: number
 }){
 
   const [isPending, startTransition] = useTransition()

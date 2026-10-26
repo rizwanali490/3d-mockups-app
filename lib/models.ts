@@ -4,7 +4,7 @@ export async function getModels({search, sort, categorySlug, modelsPerPage, page
   search?:string,
   sort?:string,
   categorySlug?:string,
-  modelsPerPage?:number,
+  modelsPerPage:number,
   page?:number
 }){
   const db = await getDBConnection()
